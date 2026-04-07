@@ -13,7 +13,7 @@ class OvertimePaymentStrategy(PaymentStrategy):
 
     def calculate(self, hours: float, rate: float) -> float:
         if hours <= self.STANDARD_LIMIT:
-            return hours * rate
+            return hours * rate * 1.1
 
         regular_pay = self.STANDARD_LIMIT * rate
         overtime_hours = hours - self.STANDARD_LIMIT
